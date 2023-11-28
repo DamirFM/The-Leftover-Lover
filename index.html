@@ -6,31 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- BULMA CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Recursive:wght@300;500;700;900&display=swap"
+    rel="stylesheet">
   <!-- OUR CSS -->
   <link rel="stylesheet" href="./Assets/style.css" />
   <title>Leftover Lover!</title>
 </head>
 
 <body>
-  <section class="hero-block">
-    <h1>Leftover Lover</h1>
-    <h3>Have any ingredients left over in the fridge?</h3>
-    <h3>Enter them to see a recipe to use them in!</h3>
-    <button class="search-button">Search for your ingredient!</button>
+  <section class="hero is-medium is-primary">
+    <div class="hero-body">
+      <h1>Leftover Lover</h1>
+      <h3>Have any ingredients left over in the fridge?</h3>
+      <h3>Enter them to see a recipe to use them in!</h3>
+      <button class="search-button">Search for your ingredient!</button>
+    </div>
+
   </section>
-  <div class="middle-block">
+
+  <div class="middle-block section">
     <section class="recent-searches">
-      <card></card>
+
+      <card>
+        <h2>Recent Recipes</h2>
+        <ul>
+          <li><button>Button 1</button></li>
+          <li><button>Button 2</button></li>
+          <li><button>Button 3</button></li>
+        </ul>
+      </card>
     </section>
 
-    <section>
-      <h2>Recent Recipes</h2>
-      <ul >
-        <li><button >Button 1</button></li>
-        <li><button >Button 2</button></li>
-        <li><button >Button 3</button></li>
-      </ul>
-    </section>
 
     <section class="recipe-block">
       <h2>Recipes</h2>
@@ -38,7 +47,7 @@
       <card class="recipe-display"></card>
     </section>
   </div>
-  <section class="youtube-block">
+  <section class="youtube-block section">
     <card class="video-embed">Video 1</card>
     <card class="video-embed">Video 2</card>
     <card class="video-embed">Video 3</card>

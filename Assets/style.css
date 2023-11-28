@@ -3,7 +3,56 @@
     --sage: #D1CA98;
     --buff: #EDBF85;
     --maize: #F7F06D;
-    --orange: #F7F06D;
+    --orange: #FFB140;
     --black: rgb(18, 18, 18);
     --green: forestgreen;
 }
+
+* {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+.hero-body {
+background-color: var(--orange);
+
+}
+
+
+.middle-block {
+background-color: var(--maize);
+
+}
+
+
+
+.recipe-block {
+
+    background-color: var(--khaki);
+}
+
+
+.youtube-block {
+    background-color: var(--khaki);
+}
+
+h1 {
+    font-family: 'Gloria Hallelujah', cursive; 
+    font-weight: bolder; 
+    font-size: 30px;
+}
+
+.recent-searches {
+background-color: var(--sage);
+
+}
+
+.recipe-block {
+    background-color: var(--buff);
+}
+
+/*
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Recursive', sans-serif;
+*/
+
