@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/style.css" />
-    <head>
-        <!-- Include the Tailwind JS file -->
-       <header>
-        <nav>
-            
-        </nav>
-       </header>
-      </head>
-    <title>leftover</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BULMA CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- OUR CSS -->
+  <link rel="stylesheet" href="./Assets/style.css" />
+  <title>Leftover Lover!</title>
 </head>
+
 <body>
+  <section class="hero-block">
+    <h1>Leftover Lover</h1>
+    <h3>Have any ingredients left over in the fridge?</h3>
+    <h3>Enter them to see a recipe to use them in!</h3>
+    <button class="search-button">Search for your ingredient!</button>
+  </section>
+  <div class="middle-block">
+    <section class="recent-searches">
+      <card></card>
+    </section>
+    <section>
+      <h2>Recent Recipes</h2>
+      <ul >
+        <li><button >Button 1</button></li>
+        <li><button >Button 2</button></li>
+        <li><button >Button 3</button></li>
+      </ul>
+    </section>
+    <section class="recipe-block">
+      <h2>Recipes</h2>
+      <card class="recipe-image"><img></card>
+      <card class="recipe-display"></card>
+    </section>
+  </div>
+  <section class="youtube-block">
+    <card class="video-embed">Video 1</card>
+    <card class="video-embed">Video 2</card>
+    <card class="video-embed">Video 3</card>
+    <card class="video-embed">Video 4</card>
+  </section>
 
 
+
+
+
+  <script src="./Assets/script.js"></script>
 </body>
+
 </html>
