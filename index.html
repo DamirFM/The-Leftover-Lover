@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- BULMA CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- GOOGLE FONTS -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
   <link
     href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Recursive:wght@300;500;700;900&display=swap"
     rel="stylesheet">
@@ -17,19 +18,25 @@
 </head>
 
 <body>
-  <section class="hero is-medium is-primary">
+
+  <!-- TOP BLOCK, INGREDIENT SEARCH -->
+  <section class="hero is-medium">
     <div class="hero-body">
       <h1>Leftover Lover</h1>
-      <h3>Have any ingredients left over in the fridge?</h3>
-      <h3>Enter them to see a recipe to use them in!</h3>
-      <button class="search-button">Search for your ingredient!</button>
+      <h4>Have any ingredients left over in the fridge?</h4>
+      <h4>Enter them to see a recipe to use them in!</h4>
+      <div class="control">
+        <input class="input" type="text" placeholder="Search for your leftover ingredient!">
+      </div>
+      <button class="search-button">Search</button>
     </div>
-
   </section>
 
-  <div class="middle-block section">
-    <section class="recent-searches">
+  <!-- MIDDLE BLOCK -->
+  <div class="middle-block section columns">
 
+    <!-- RECENT RECIPE SEARCHES -->
+    <section class="recent-searches column is-half">
       <card>
         <h2>Recent Recipes</h2>
         <ul>
@@ -40,24 +47,111 @@
       </card>
     </section>
 
-
-    <section class="recipe-block">
+    <!-- RETURN RECIPE WITH IMAGE -->
+    <section class="recipe-block column is-half">
       <h2>Recipes</h2>
-      <card class="recipe-image"><img></card>
-      <card class="recipe-display"></card>
-    </section>
+      <card class="recipe-image" id="recipe-image"><img></card>
+      <card class="recipe-display" id="recipe-display"></card>
+
+      <div class="columns">
+
+        <!-- RECIPE IMAGE/TITLE CARD -->
+        <div class="card column">
+          <div class="card-image">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media-left media-content">
+              <p class="title is-2"> Lamb Tzatziki Burgers</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECIPE DIRECTIONS -->
+        <div class="card column">
+          <div class="card-content">
+            <div class="media-right media-content">
+              <h5> Instructions</h5>
+              <ul class="recipe-instructions">
+                <li>Tip the bulghar into a pan, cover with water and boil for 10 mins.</li>
+                <li>Drain really well in a sieve, pressing out any excess water.</li>
+                <li>To make the tzatziki, squeeze and discard the juice from the cucumber, then mix into the yogurt with
+                  the chopped mint and a little salt.</li>
+                <li>Work the bulghar into the lamb with the spices, garlic (if using) and seasoning, then shape into 4
+                  burgers.</li>
+                <li>Brush with a little oil and fry or barbecue for about 5 mins each side until cooked all the way
+                  through.</li>
+                <li>Serve in the buns (toasted if you like) with the tzatziki, tomatoes, onion and a few mint leaves.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
   </div>
-  <section class="youtube-block section">
-    <card class="video-embed">Video 1</card>
-    <card class="video-embed">Video 2</card>
-    <card class="video-embed">Video 3</card>
-    <card class="video-embed">Video 4</card>
+
+
+
+
+
+
+
+
+  </section>
+  </div>
+
+  <!-- BOTTOM BLOCK, EMBEDDED YOUTUBE RECIPES -->
+  <!-- CURRENTLY FIRST 4 VIDEOS (NON SPONSORED) FOR "CELERY INGREDIENT RECIPE" -->
+  <section class="youtube-block section columns">
+
+    <card class="video-embed column-is-quarter">
+      <header class="card-header">
+        <h3 class="card-header-title is-center is-capitalized">Video 1</h3>
+      </header>
+      <iframe width="250" height="141" src="https://www.youtube.com/embed/YaFsjMwrquI?si=yjDF5UVWkO02DLMM"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </card>
+
+    <card class="video-embed">
+      <header class="card-header">
+        <h3 class="card-header-title is-center is-capitalized">Video 2</h3>
+      </header>
+      <iframe width="250" height="141" src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </card>
+
+    <card class="video-embed">
+      <header class="card-header">
+        <h3 class="card-header-title is-center is-capitalized">Video 3</h3>
+      </header>
+      <iframe width="250" height="141" src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </card>
+
+    <card class="video-embed">
+      <header class="card-header">
+        <h3 class="card-header-title is-center is-capitalized">Video 4</h3>
+      </header>
+      <iframe width="250" height="141" src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </card>
+
   </section>
 
-
-
-
-
+  <!-- OUR JS -->
   <script src="./Assets/script.js"></script>
 </body>
 

@@ -1,3 +1,4 @@
+/* THEMATIC STYLING ELEMENTS */
 :root {
     --khaki: #B7B3A1;
     --sage: #D1CA98;
@@ -6,53 +7,76 @@
     --orange: #FFB140;
     --black: rgb(18, 18, 18);
     --green: forestgreen;
+    --cursive: 'Gloria Hallelujah', cursive;
+    --sans: 'Recursive', sans-serif;
 }
 
+
+/* UNIVERSAL STYLING ELEMENTS */
 * {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: var(--sans);
 }
 
-
-.hero-body {
-background-color: var(--orange);
-
-}
-
-
-.middle-block {
-background-color: var(--maize);
-
-}
-
-
-
-.recipe-block {
-
-    background-color: var(--khaki);
-}
-
-
-.youtube-block {
-    background-color: var(--khaki);
-}
-
-h1 {
-    font-family: 'Gloria Hallelujah', cursive; 
-    font-weight: bolder; 
+h1,
+h2,
+h3 {
+    font-family: var(--cursive);
+    font-weight: bolder;
     font-size: 30px;
 }
 
-.recent-searches {
-background-color: var(--sage);
+h4,
+h5,
+h6 {
+    font-size: 120%;
+    font-weight: 900;
+}
 
+
+/* TOP BLOCK */
+.hero-body {
+    background-color: var(--orange);
+    padding: 2%;
+}
+
+
+/* MIDDLE BLOCK */
+.middle-block {
+    background-color: var(--maize);
+    padding: 2%;
+}
+
+.recent-searches {
+    background-color: var(--sage);
+    padding: 2%;
 }
 
 .recipe-block {
     background-color: var(--buff);
+    padding: 2%;
 }
 
-/*
-font-family: 'Gloria Hallelujah', cursive;
-font-family: 'Recursive', sans-serif;
-*/
+.recipe-instructions {
+    height: 200px;
+    overflow: scroll;
+}
 
+.recipe-instruction li {
+    font-size: 75%;
+    list-style: square;
+}
+
+
+/* BOTTOM BLOCK */
+.youtube-block {
+    background-color: var(--khaki);
+    padding: 2%;
+}
+
+.video-embed {
+    padding: 10px;
+}
+
+.video-embed .card-header {
+    background-color: #ffaf4087;
+}
