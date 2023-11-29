@@ -55,7 +55,7 @@ function getMainIngredient() {
 
 function getYoutubeData() {
     let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
-    let userInput = inputEl.value.trim();
+    let userInput =  "recipe" + "ingredient" + inputEl.value.trim();
    
 
     // URL request to the youtube api + keyword recipe + ingriedient
