@@ -25,10 +25,11 @@
       <h1>Leftover Lover</h1>
       <h4>Have any ingredients left over in the fridge?</h4>
       <h4>Enter them to see a recipe to use them in!</h4>
-      <div class="control">
-        <input class="input" type="text" placeholder="Search for your leftover ingredient!">
-      </div>
-      <button class="search-button">Search</button>
+      
+        <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
+      <div id="btn" class="w-100">
+      <button id="search" class="search">Search</button>
+    </div>
     </div>
   </section>
 
@@ -48,30 +49,30 @@
     </section>
 
     <!-- RETURN RECIPE WITH IMAGE -->
-    <section class="recipe-block column is-half carouselbox" aria-role="img" aria-label="carousel"">
+    <section class="recipe-block column is-half carouselbox" aria-role="img" aria-label="carousel">
       <h2>Recipes</h2>
-      <card class="recipe-image" id="recipe-image"><img></card>
-      <card class="recipe-display" id="recipe-display"></card>
+      <!-- <card class="recipe-image" id="recipe-image"><img></card>
+      <card class="recipe-display" id="recipe-display"></card> -->
 
       <div class="columns">
 
         <!-- RECIPE IMAGE/TITLE CARD -->
         <div class="card column">
-          <div class="card-image">
+          <div class="card-image" id="recipe-image">
             <figure class="image is-128x128">
-              <img class="is-rounded" src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
+              <img class="is-rounded"  src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
             </figure>
           </div>
           <div class="card-content">
-            <div class="media-left media-content">
-              <p class="title is-2"> Lamb Tzatziki Burgers</p>
+            <div class="media-left media-content" id="recipe-title">
+              <p class="title is-2"  > Lamb Tzatziki Burgers</p>
             </div>
           </div>
         </div>
 
         <!-- RECIPE DIRECTIONS -->
         <div class="card column">
-          <div class="card-content">
+          <div class="card-content"  id="recipe-display">
             <div class="media-right media-content">
               <h5> Instructions</h5>
               <ul class="recipe-instructions">
@@ -89,10 +90,10 @@
             </div>
           </div>
         </div>
-      <button class="prev">◀ Previous</button>
-        <button class="next">Next ▶ </button>
-      </div>
 
+      </div>
+        <button class="prev">◀ Previous</button>
+        <button class="next">Next ▶ </button>
 
 
   </div>
@@ -118,7 +119,8 @@
       <iframe width="250" height="141" src="https://www.youtube.com/embed/YaFsjMwrquI?si=yjDF5UVWkO02DLMM"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+        allowfullscreen>
+      </iframe>
     </card>
 
     <card class="video-embed">

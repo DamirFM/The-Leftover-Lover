@@ -4,6 +4,7 @@ let inputEl = document.getElementById('user-input');
 let searchButton = document.getElementById('search');
 let recipeCard = document.getElementById('recipe-display');
 let recipeImage = document.getElementById('recipe-image');
+let recipeTitle = document.getElementById('recipe-title');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
 let currentIndex = 0;
@@ -43,7 +44,39 @@ if (!userInput) {
 //     localStorage.setItem('user-input', JSON.stringify([ingredient]));
 //   }
 // }
+// function for display Recipe
+function displayRecipe(index) {
+    // Clear previous content
+    recipeCard.innerHTML = ""; 
+    // retrieve the meal object at the specified index within 
+    // the dataMeals array and assign it to the currentMeal variable.
+    let currentMeal = dataMeals[index];
 
+    recipeTitle.innerHTML = '';
+    // Crating h5 element fot Recipe title
+    let cardTitle = document.createElement('h5');
+    // Assigning data from object
+    cardTitle.textContent = currentMeal.strMeal;
+    // Added the class name
+    cardTitle.classList = 'card-title';
+    // Append it to the [arent element]
+    recipeTitle.appendChild(cardTitle);
+    // Same as h5
+    recipeCard.innerHTML = '';
+    let cardParagraph = document.createElement("p");
+    cardParagraph.textContent = currentMeal.strInstructions;
+    recipeCard.appendChild(cardParagraph);
+
+
+
+
+    recipeImage.innerHTML = '';
+    let cardImg = document.createElement("img");
+    // cardImg.classList("is-rounded");
+    cardImg.src = currentMeal.strMealThumb;
+    recipeImage.appendChild(cardImg);
+    
+}
 
 // URL request to the themealdb.com
 
@@ -64,30 +97,6 @@ fetch(requestUrl)
         // Replace with the basic dialog window jQuery ui
         alert('No recipes found!');
         return;
-    }
-    // function for display Recipe
-    function displayRecipe(index) {
-        // Clear previous content
-        recipeCard.innerHTML = ""; 
-        // retrieve the meal object at the specified index within 
-        // the dataMeals array and assign it to the currentMeal variable.
-        let currentMeal = dataMeals[index];
-        // Crating h5 element fot Recipe title
-        let cardTitle = document.createElement('h5');
-        // Assigning data from object
-        cardTitle.textContent = currentMeal.strMeal;
-        // Added the class name
-        cardTitle.classList = 'card-title';
-        // Append it to the [arent element]
-        recipeCard.appendChild(cardTitle);
-        // Same as h5
-        let cardParagraph = document.createElement("p");
-        cardParagraph.textContent = currentMeal.strInstructions;
-        recipeCard.appendChild(cardParagraph);
-    
-        let cardImg = document.createElement("img");
-        cardImg.src = currentMeal.strMealThumb;
-        recipeCard.appendChild(cardImg);
     }
     
     // Navigation function throughout the dataMeals array
@@ -139,7 +148,7 @@ function getYoutubeData() {
         .then(function (data) {
             console.log(data);
         });
-
+    }
 
 
 // EventListener for the search buttton
