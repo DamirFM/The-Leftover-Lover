@@ -117,9 +117,33 @@ fetch(requestUrl)
 });
 
 
+
 };
+  
+  
+function getYoutubeData() {
+    let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
+    let userInput =  "recipe" + "ingredient" + inputEl.value.trim();
+   
+
+    // URL request to the youtube api + keyword recipe + ingriedient
+    let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + youtubeApiKey;
+    console.log(youtubeRequestUrl)
+    // Do fetch to requestUrl
+    fetch(youtubeRequestUrl)
+        // If requestUrl is accepted and we get response do json()
+        .then(function (response) {
+            return response.json();
+        })
+        // then manage the response (response = data)
+        .then(function (data) {
+            console.log(data);
+        });
+
+
 
 // EventListener for the search buttton
 searchButton.addEventListener('click', getMainIngredient);
-
-
+  
+//EventListener for youtube data
+searchButton.addEventListener('click', getYoutubeData);
