@@ -5,6 +5,7 @@ let searchButton = document.getElementById('search');
 let recipeCard = document.getElementById('recipe-display');
 let recipeImage = document.getElementById('recipe-image');
 let recipeTitle = document.getElementById('recipe-title');
+let historyList = document.getElementById('historyBar');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
 let currentIndex = 0;
@@ -23,27 +24,29 @@ if (!userInput) {
   }
 
 // Save userInput to the LocalStorage
-//saveToLocalStorage(userInput);
-// // Function to save user input LocalStorage
-// function saveToLocalStorage(ingredient) {
+saveToLocalStorage(userInput);
+// Function to save user input LocalStorage
+function saveToLocalStorage(ingredient) {
     
-//     // let's retrieves the item named 'user-input' from the local storage and 
-//     // assign it to the history variable.
-//     let history = localStorage.getItem('user-input');
-//     // If key exist
-//     if (history) {  
-//     // Do JSON.parse  and assigns it back to the history variable.
-//     history = JSON.parse(history);
-//     // then push ingredient value to history array
-//     history.push(ingredient);
-//     // If history already existed - update the local storage 
-//     // by stringifying the updated history array 
-//     localStorage.setItem('user-input', JSON.stringify(history));
-//     } else {
-//     // If there was no existing history creates a new array containing only the current ingredient
-//     localStorage.setItem('user-input', JSON.stringify([ingredient]));
-//   }
-// }
+    // let's retrieves the item named 'user-input' from the local storage and 
+    // assign it to the history variable.
+    let history = localStorage.getItem('user-input');
+    // If key exist
+    if (history) {  
+    // Do JSON.parse  and assigns it back to the history variable.
+    history = JSON.parse(history);
+    // then push ingredient value to history array
+    history.push(ingredient);
+    // If history already existed - update the local storage 
+    // by stringifying the updated history array 
+    localStorage.setItem('user-input', JSON.stringify(history));
+    } else {
+    // If there was no existing history creates a new array containing only the current ingredient
+    localStorage.setItem('user-input', JSON.stringify([ingredient]));
+  }
+}
+
+
 // function for display Recipe
 function displayRecipe(index) {
     // Clear previous content
@@ -128,6 +131,9 @@ fetch(requestUrl)
 
 
 };
+
+
+
   
   
 function getYoutubeData() {
@@ -150,9 +156,44 @@ function getYoutubeData() {
         });
     }
 
-
+// Function to display search history from local storage
+function displaySearchHistory() {
+    // Declaration of the displaySearchHistory() function.
+    let history = localStorage.getItem('user-input');
+    // Retrieve the item named 'user-input' 
+    // from the local storage and assigns it to the history variable
+    if (history) {
+      // If history exists, it parses the data 
+      history = JSON.parse(history);
+      // Let's clears the existing content of the historyList element 
+      // to avoid duplicating the search history.
+      historyList.textContent = "";
+      // Loop for each history element in the history array
+      history.forEach(ingredient => {
+        // Create li element and button element
+        let liEl = document.createElement("li");
+        let btnEl = document.createElement("button");
+        // Assign ingredient value to the button element
+        btnEl.textContent = ingredient;
+        // Assign the class to the button element
+        btnEl.classList = 'btn btn-pr w-100 my-1';
+        // Let's add EventListener to every each new button element
+        btnEl.addEventListener('click', function () {
+          inputEl.value = ingredient; // Set input value to the clicked ingredient
+          getMainIngredient (); // Call getApi function for the clicked ingredient
+        });
+        // Append button element to the li element
+        liEl.appendChild(btnEl);
+        // Append li element to the history element
+        historyList.appendChild(liEl);
+      });
+    }
+  }
+// Display search history upon page load
+window.addEventListener('load', displaySearchHistory);
 // EventListener for the search buttton
 searchButton.addEventListener('click', getMainIngredient);
   
 //EventListener for youtube data
 searchButton.addEventListener('click', getYoutubeData);
+
