@@ -25,11 +25,11 @@
       <h1>Leftover Lover</h1>
       <h4>Have any ingredients left over in the fridge?</h4>
       <h4>Enter them to see a recipe to use them in!</h4>
-      
-        <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
+
+      <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
       <div id="btn" class="w-100">
-      <button id="search" class="search">Search</button>
-    </div>
+        <button id="search" class="search">Search</button>
+      </div>
     </div>
   </section>
 
@@ -60,19 +60,19 @@
         <div class="card column">
           <div class="card-image" id="recipe-image">
             <figure class="image is-128x128">
-              <img class="is-rounded"  src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
+              <img class="is-rounded" src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
             </figure>
           </div>
           <div class="card-content">
             <div class="media-left media-content" id="recipe-title">
-              <p class="title is-2"  > Lamb Tzatziki Burgers</p>
+              <p class="title is-2"> Lamb Tzatziki Burgers</p>
             </div>
           </div>
         </div>
 
         <!-- RECIPE DIRECTIONS -->
         <div class="card column">
-          <div class="card-content"  id="recipe-display">
+          <div class="card-content" id="recipe-display">
             <div class="media-right media-content">
               <h5> Instructions</h5>
               <ul class="recipe-instructions">
@@ -92,63 +92,54 @@
         </div>
 
       </div>
-        <button class="prev">◀ Previous</button>
-        <button class="next">Next ▶ </button>
+      <button class="prev">◀ Previous</button>
+      <button class="next">Next ▶ </button>
+    </section>
 
 
-  </div>
-
-
-
-
-
-
-
-
-  </section>
   </div>
 
   <!-- BOTTOM BLOCK, EMBEDDED YOUTUBE RECIPES -->
   <!-- CURRENTLY FIRST 4 VIDEOS (NON SPONSORED) FOR "CELERY INGREDIENT RECIPE" -->
   <section class="youtube-block section columns">
 
-    <card class="video-embed column-is-quarter">
+    <card class="video-embed column-is-quarter" id="video-embed-zero">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 1</h3>
       </header>
-      <iframe width="250" height="141" src="https://www.youtube.com/embed/YaFsjMwrquI?si=yjDF5UVWkO02DLMM"
+      <iframe id="video-zero" width="250" height="141" src="https://www.youtube.com/embed/cM_q2KrWUsA"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
     </card>
 
-    <card class="video-embed">
+    <card class="video-embed" id="video-embed-one">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 2</h3>
       </header>
-      <iframe width="250" height="141" src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p"
-        title="YouTube video player" frameborder="0"
+      <iframe id="video-one" width="250" height="141"
+        src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p" title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </card>
 
-    <card class="video-embed">
+    <card class="video-embed" id="video-embed-two">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 3</h3>
       </header>
-      <iframe width="250" height="141" src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra"
-        title="YouTube video player" frameborder="0"
+      <iframe id="video-two" width="250" height="141"
+        src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra" title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </card>
 
-    <card class="video-embed">
+    <card class="video-embed" id="video-embed-three">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 4</h3>
       </header>
-      <iframe width="250" height="141" src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y"
-        title="YouTube video player" frameborder="0"
+      <iframe id="video-three" width="250" height="141"
+        src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y" title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </card>
