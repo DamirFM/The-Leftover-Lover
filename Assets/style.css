@@ -17,7 +17,7 @@
 /* UNIVERSAL STYLING ELEMENTS */
 * {
     font-family: var(--sans);
-    
+
 }
 
 h1 {
@@ -54,25 +54,53 @@ h7 {
 /* TOP BLOCK */
 .hero-body {
     background-color: var(--orange);
-    padding: 2%;  
+    padding: 2%;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.15;
+    object-fit: contain;
+    z-index: 0;
+}
+
+.hero-block {
+    z-index: 1;
+}
+
+.parallax {
+    /* background-image: url("../images/looking\ down\ side\ on.jpg"); */
+    /* min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .hero-body h4 {
     line-height: 30px;
     margin: 0px;
     padding: 0px;
-    border-radius: var(--rounded)   
+    border-radius: var(--rounded);
 }
 
 #lemon-icon {
     height: 30px
-    }
+}
 
 #user-input {
     width: 300px;
     height: 40px;
     border-radius: var(--rounded);
     margin-top: 20px;
+    z-index: 1;
+    position: relative;
 }
 
 #search {
@@ -86,6 +114,7 @@ h7 {
     padding: 2%;
     display: flex;
     justify-content: space-evenly;
+    z-index: 1;
 }
 
 .recent-searches {
@@ -126,6 +155,7 @@ h7 {
 .youtube-block {
     background-color: var(--khaki);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
