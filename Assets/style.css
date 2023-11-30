@@ -9,6 +9,8 @@
     --green: forestgreen;
     --cursive: 'Gloria Hallelujah', cursive;
     --sans: 'Recursive', sans-serif;
+    --rounded: 20px;
+    --shadow: var(--khaki) 0px 10px 36px 0px, var(--orange) 0px 0px 0px 1px;
 }
 
 
@@ -44,16 +46,31 @@ h6 {
 .middle-block {
     background-color: var(--maize);
     padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .recent-searches {
     background-color: var(--sage);
     padding: 2%;
+    height: 400px;
+    overflow: scroll;
+    border-radius: var(--rounded);
+    margin: 10px;
+    box-shadow: var(--shadow);
 }
 
 .recipe-block {
     background-color: var(--buff);
     padding: 2%;
+    border-radius: var(--rounded);
+    margin: 10px;
+    box-shadow: var(--shadow);
+
+}
+
+.recipe-title {
+    padding-bottom: 5%;
 }
 
 .recipe-instructions {
@@ -79,4 +96,10 @@ h6 {
 
 .video-embed .card-header {
     background-color: #ffaf4087;
+}
+
+@media (max-width: 560px) {
+    .middle-block {
+        display: block;
+    }
 }
