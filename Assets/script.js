@@ -8,8 +8,10 @@ let recipeTitle = document.getElementById('recipe-title');
 let historyList = document.getElementById('historyBar');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
+
 let currentIndex = 0;
 let dataMeals = [];
+
 
 function getMainIngredient() {
     // get user input
@@ -17,7 +19,19 @@ function getMainIngredient() {
     // If user input is empty -> alert
     if (!userInput) {
         // Replace with the basic dialog window jQuery ui
-        alert('You need to fill out the ingredient name!');
+        console.log('You need to fill out the ingredient name!');
+        // alert('You need to fill out the ingredient name!');
+        let hero = document.getElementById('hero');
+        let notification = document.createElement('div');
+        notification.setAttribute("class", "notification")
+        notification.textContent = 'You need to fill out the ingredient name!'
+        let btnEl = document.createElement("button");
+        btnEl.setAttribute("class", "delete")
+        notification.appendChild(btnEl);
+        hero.appendChild(notification);
+        btnEl.addEventListener('click',function() {
+        notification.remove();
+        });
         return;
     }
 
@@ -67,11 +81,23 @@ function getMainIngredient() {
             // Assign the fetched data to dataMeals array
             dataMeals = data.meals;
             // if fetched data is empty 
-            if (dataMeals.length === 0) {
-
+            if (dataMeals === null) {
+                let hero = document.getElementById('hero');
+                let notification = document.createElement('div');
+                notification.setAttribute("class", "notification")
+                notification.textContent = 'Sorry,wrong ingredient name!'
+                let btnEl = document.createElement("button");
+                btnEl.setAttribute("class", "delete")
+                notification.appendChild(btnEl);
+                hero.appendChild(notification);
+                btnEl.addEventListener('click',function() {
+                notification.remove();
+                });
                 // Replace with the basic dialog window jQuery ui
-                alert('You need to fill out the ingredient name!');
+                console.log('Sorry,wrong ingredient name!');
                 return;
+            } else if (dataMeals.length === 0  ) {
+                console.log('You need to fill out the ingredient name!');
             }
 
             // function for display Recipe
