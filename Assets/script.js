@@ -176,7 +176,10 @@ function getMainIngredient() {
                     });
                 });
         });
+
+});
 }
+
 
 function getYoutubeData() {
     let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
