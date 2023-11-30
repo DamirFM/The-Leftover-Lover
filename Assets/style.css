@@ -53,11 +53,11 @@ h6 {
 .recent-searches {
     background-color: var(--sage);
     padding: 2%;
-    height: 400px;
-    overflow: scroll;
+    /* height: 400px; */
+    /* overflow: scroll; */
     border-radius: var(--rounded);
-    margin: 10px;
     box-shadow: var(--shadow);
+    margin: 10px;
 }
 
 .recipe-block {
@@ -87,7 +87,8 @@ h6 {
 /* BOTTOM BLOCK */
 .youtube-block {
     background-color: var(--khaki);
-    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .video-embed {

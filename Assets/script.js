@@ -1,9 +1,9 @@
-// // https://www.themealdb.com/api/json/v1/1/filter.php?i=
+// https://www.themealdb.com/api/json/v1/1/filter.php?i=
 
 let inputEl = document.getElementById('user-input');
 let searchButton = document.getElementById('search');
 let recipeCard = document.getElementById('recipe-display');
-let recipeImage = document.getElementById('recipe-image');
+let recipeImage = document.getElementById('recipe-figure');
 let recipeTitle = document.getElementById('recipe-title');
 let historyList = document.getElementById('historyBar');
 let prevButton = document.querySelector('.prev');
@@ -11,17 +11,26 @@ let nextButton = document.querySelector('.next');
 let currentIndex = 0;
 let dataMeals = [];
 
-
-
-
-
+// Function to input the ingredient into MealDB and return Recipe cards
 function getMainIngredient() {
     // get user input
     let userInput = inputEl.value.trim();
     // If user input is empty -> alert
     if (!userInput) {
         // Replace with the basic dialog window jQuery ui
-        alert('You need to fill out the City name!');
+        console.log('You need to fill out the ingredient name!');
+        // alert('You need to fill out the ingredient name!');
+        let hero = document.getElementById('hero');
+        let notification = document.createElement('div');
+        notification.setAttribute("class", "notification")
+        notification.textContent = 'You need to fill out the ingredient name!'
+        let btnEl = document.createElement("button");
+        btnEl.setAttribute("class", "delete")
+        notification.appendChild(btnEl);
+        hero.appendChild(notification);
+        btnEl.addEventListener('click', function () {
+            notification.remove();
+        });
         return;
     }
 
@@ -33,15 +42,23 @@ function getMainIngredient() {
         // let's retrieves the item named 'user-input' from the local storage and 
         // assign it to the history variable.
         let history = localStorage.getItem('user-input');
+
         // If key exist
         if (history) {
             // Do JSON.parse  and assigns it back to the history variable.
             history = JSON.parse(history);
+
+
             // then push ingredient value to history array
             history.push(ingredient);
+            // updates the history variable.
+            if (history.length > 10) {
+                history = history.slice(-10);
+            }
             // If history already existed - update the local storage 
             // by stringifying the updated history array 
             localStorage.setItem('user-input', JSON.stringify(history));
+            console.log(JSON.stringify(history));
         } else {
             // If there was no existing history creates a new array containing only the current ingredient
             localStorage.setItem('user-input', JSON.stringify([ingredient]));
@@ -49,42 +66,8 @@ function getMainIngredient() {
     }
 
 
-    // function for display Recipe
-    function displayRecipe(index) {
-        // Clear previous content
-        recipeCard.innerHTML = "";
-        // retrieve the meal object at the specified index within 
-        // the dataMeals array and assign it to the currentMeal variable.
-        let currentMeal = dataMeals[index];
 
-        recipeTitle.innerHTML = '';
-        // Crating h5 element fot Recipe title
-        let cardTitle = document.createElement('h5');
-        // Assigning data from object
-        cardTitle.textContent = currentMeal.strMeal;
-        // Added the class name
-        cardTitle.classList = 'card-title';
-        // Append it to the [arent element]
-        recipeTitle.appendChild(cardTitle);
-        // Same as h5
-        recipeCard.innerHTML = '';
-        let cardParagraph = document.createElement("p");
-        cardParagraph.textContent = currentMeal.strInstructions;
-        recipeCard.appendChild(cardParagraph);
-
-
-
-
-        recipeImage.innerHTML = '';
-        let cardImg = document.createElement("img");
-        // cardImg.classList("is-rounded");
-        cardImg.src = currentMeal.strMealThumb;
-        recipeImage.appendChild(cardImg);
-
-    }
-
-    // URL request to the themealdb.com
-
+    // URL request to the themealdb.com for Recipe Generation
     let requestUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
     console.log(requestUrl)
     // Do fetch to requestUrl
@@ -98,35 +81,25 @@ function getMainIngredient() {
             // Assign the fetched data to dataMeals array
             dataMeals = data.meals;
             // if fetched data is empty 
-            if (dataMeals.length === 0) {
-
+            if (dataMeals === null) {
+                let hero = document.getElementById('hero');
+                let notification = document.createElement('div');
+                notification.setAttribute("class", "notification")
+                notification.textContent = 'Sorry,wrong ingredient name!'
+                let btnEl = document.createElement("button");
+                btnEl.setAttribute("class", "delete")
+                notification.appendChild(btnEl);
+                hero.appendChild(notification);
+                btnEl.addEventListener('click', function () {
+                    notification.remove();
+                });
                 // Replace with the basic dialog window jQuery ui
-                alert('You need to fill out the City name!');
+                console.log('Sorry,wrong ingredient name!');
                 return;
+            } else if (dataMeals.length === 0) {
+                console.log('You need to fill out the ingredient name!');
             }
 
-            // Save userInput to the LocalStorage
-            //saveToLocalStorage(userInput);
-            // // Function to save user input LocalStorage
-            // function saveToLocalStorage(ingredient) {
-
-            //     // let's retrieves the item named 'user-input' from the local storage and 
-            //     // assign it to the history variable.
-            //     let history = localStorage.getItem('user-input');
-            //     // If key exist
-            //     if (history) {  
-            //     // Do JSON.parse  and assigns it back to the history variable.
-            //     history = JSON.parse(history);
-            //     // then push ingredient value to history array
-            //     history.push(ingredient);
-            //     // If history already existed - update the local storage 
-            //     // by stringifying the updated history array 
-            //     localStorage.setItem('user-input', JSON.stringify(history));
-            //     } else {
-            //     // If there was no existing history creates a new array containing only the current ingredient
-            //     localStorage.setItem('user-input', JSON.stringify([ingredient]));
-            //   }
-            // }
             // function for display Recipe
             function displayRecipe(index) {
                 // Clear previous content
@@ -135,34 +108,28 @@ function getMainIngredient() {
                 // the dataMeals array and assign it to the currentMeal variable.
                 let currentMeal = dataMeals[index];
 
-                recipeTitle.innerHTML = '';
-                // Crating h5 element fot Recipe title
-                let cardTitle = document.createElement('h5');
-                // Assigning data from object
-                cardTitle.textContent = currentMeal.strMeal;
-                // Added the class name
-                cardTitle.classList = 'card-title';
-                // Append it to the [arent element]
-                recipeTitle.appendChild(cardTitle);
-                // Same as h5
-                recipeCard.innerHTML = '';
-                let cardParagraph = document.createElement("p");
-                cardParagraph.textContent = currentMeal.strInstructions;
-                recipeCard.appendChild(cardParagraph);
-
-
-
-
+                // Generate Recipe Card Image
                 recipeImage.innerHTML = '';
                 let cardImg = document.createElement("img");
-                // cardImg.classList("is-rounded");
+                cardImg.classList = "is-rounded";
                 cardImg.src = currentMeal.strMealThumb;
                 recipeImage.appendChild(cardImg);
 
+                // Generate Recipe Card Title
+                recipeTitle.innerHTML = '';
+                let cardTitle = document.createElement("h5");
+                cardTitle.textContent = currentMeal.strMeal;
+                recipeTitle.appendChild(cardTitle);
+
+                // Generate Recipe Card Instructions
+                recipeCard.innerHTML = '';
+                let cardParagraph = document.createElement("ul");
+                cardParagraph.textContent = currentMeal.strInstructions;
+                cardParagraph.classList = 'content recipe-instructions';
+                recipeCard.appendChild(cardParagraph);
             }
 
-            // URL request to the themealdb.com
-
+            // URL request to the themealdb.com for Cycling through recipes
             let requestUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
             console.log(requestUrl)
             // Do fetch to requestUrl
@@ -210,17 +177,15 @@ function getMainIngredient() {
         });
 }
 
-
-
-
-
+// Function to search Youtube for the ingredient and return 4 videos
 function getYoutubeData() {
     let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
+    let mcyoutubeApiKey = 'AIzaSyAOyV1zNyuCA9Jp91CeZtyRmQSmhKZEAts';
     let userInput = "recipe" + "ingredient" + inputEl.value.trim();
 
 
     // URL request to the youtube api + keyword recipe + ingriedient
-    let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + youtubeApiKey;
+    let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + mcyoutubeApiKey;
     console.log(youtubeRequestUrl)
     // Do fetch to requestUrl
     fetch(youtubeRequestUrl)
@@ -288,7 +253,7 @@ function displaySearchHistory() {
             // Assign ingredient value to the button element
             btnEl.textContent = ingredient;
             // Assign the class to the button element
-            btnEl.classList = 'btn btn-pr w-100 my-1';
+            btnEl.classList = 'button is-light is-normal is-success is-rounded my-1';
             // Let's add EventListener to every each new button element
             btnEl.addEventListener('click', function () {
                 inputEl.value = ingredient; // Set input value to the clicked ingredient
@@ -301,11 +266,10 @@ function displaySearchHistory() {
         });
     }
 }
+
 // Display search history upon page load
 window.addEventListener('load', displaySearchHistory);
 // EventListener for the search buttton
 searchButton.addEventListener('click', getMainIngredient);
-
 //EventListener for youtube data
 searchButton.addEventListener('click', getYoutubeData);
-
