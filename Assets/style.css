@@ -19,7 +19,13 @@
     font-family: var(--sans);
 }
 
-h1,
+h1 {
+    font-family: var(--cursive);
+    font-weight: bolder;
+    font-size: 65px;
+    line-height: 0.8;
+}
+
 h2,
 h3 {
     font-family: var(--cursive);
@@ -34,11 +40,42 @@ h6 {
     font-weight: 900;
 }
 
+h7 {
+    font-family: var(--cursive);
+    font-weight: bolder;
+    font-size: 60px;
+    line-height: 0.8;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
 
 /* TOP BLOCK */
 .hero-body {
     background-color: var(--orange);
-    padding: 2%;
+    padding: 2%;  
+}
+
+.hero-body h4 {
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: var(--rounded)   
+}
+
+#lemon-icon {
+    height: 30px
+    }
+
+#user-input {
+    width: 300px;
+    height: 40px;
+    border-radius: var(--rounded);
+    margin-top: 20px;
+}
+
+#search {
+    margin-top: 10px;
 }
 
 

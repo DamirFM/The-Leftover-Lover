@@ -8,10 +8,13 @@ let recipeTitle = document.getElementById('recipe-title');
 let historyList = document.getElementById('historyBar');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
+
 let currentIndex = 0;
 let dataMeals = [];
 
+
 // Function to input the ingredient into MealDB and return Recipe cards
+
 function getMainIngredient() {
     // get user input
     let userInput = inputEl.value.trim();
@@ -28,6 +31,7 @@ function getMainIngredient() {
         btnEl.setAttribute("class", "delete")
         notification.appendChild(btnEl);
         hero.appendChild(notification);
+
         btnEl.addEventListener('click', function () {
             notification.remove();
         });
@@ -47,7 +51,6 @@ function getMainIngredient() {
         if (history) {
             // Do JSON.parse  and assigns it back to the history variable.
             history = JSON.parse(history);
-
 
             // then push ingredient value to history array
             history.push(ingredient);
@@ -90,13 +93,17 @@ function getMainIngredient() {
                 btnEl.setAttribute("class", "delete")
                 notification.appendChild(btnEl);
                 hero.appendChild(notification);
+
                 btnEl.addEventListener('click', function () {
                     notification.remove();
+
                 });
                 // Replace with the basic dialog window jQuery ui
                 console.log('Sorry,wrong ingredient name!');
                 return;
+
             } else if (dataMeals.length === 0) {
+
                 console.log('You need to fill out the ingredient name!');
             }
 
@@ -175,6 +182,7 @@ function getMainIngredient() {
                     });
                 });
         });
+
 }
 
 // Function to search Youtube for the ingredient and return 4 videos
@@ -182,7 +190,6 @@ function getYoutubeData() {
     let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
     let mcyoutubeApiKey = 'AIzaSyAOyV1zNyuCA9Jp91CeZtyRmQSmhKZEAts';
     let userInput = "recipe" + "ingredient" + inputEl.value.trim();
-
 
     // URL request to the youtube api + keyword recipe + ingriedient
     let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + mcyoutubeApiKey;
@@ -253,7 +260,9 @@ function displaySearchHistory() {
             // Assign ingredient value to the button element
             btnEl.textContent = ingredient;
             // Assign the class to the button element
+
             btnEl.classList = 'button is-light is-normal is-success is-rounded my-1';
+
             // Let's add EventListener to every each new button element
             btnEl.addEventListener('click', function () {
                 inputEl.value = ingredient; // Set input value to the clicked ingredient
