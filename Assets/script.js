@@ -188,7 +188,7 @@ function getMainIngredient() {
 
 // Function to search Youtube for the ingredient and return 4 videos
 function getYoutubeData() {
-    let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
+    // let pkyoutubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
     let mcyoutubeApiKey = 'AIzaSyAOyV1zNyuCA9Jp91CeZtyRmQSmhKZEAts';
     let userInput = "recipe" + "ingredient" + inputEl.value.trim();
 

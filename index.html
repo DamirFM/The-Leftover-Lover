@@ -22,14 +22,21 @@
   <!-- TOP BLOCK, INGREDIENT SEARCH -->
   <section class="hero is-medium">
     <div class="hero-body" id="hero">
-      <h1> Leftover</h1>
-      <h7><span> <image  id="lemon-icon" src="./Assets/images/Lemon!.png" alt="lemon icon"> </span>Lover</h7>
-      <h4>Have any ingredients left over in the fridge?</h4>
-      <h4>Enter them to see a recipe to use them in!</h4>
+      <video loop muted autoplay playsinline class="background-video">
+        <source src="./Assets/images/saltbae.mp4">
+      </video>
+      <div class="hero-block">
+        <h1> Leftover</h1>
+        <h7><span>
+            <image id="lemon-icon" src="./Assets/images/Lemon!.png" alt="lemon icon">
+          </span>Lover</h7>
+        <h4>Have any ingredients left over in the fridge?</h4>
+        <h4>Enter them to see a recipe to use them in!</h4>
 
-      <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
-      <div id="btn" class="w-100">
-        <button class="search button is-small is-sucess is-rounded" id="search">Search</button>
+        <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
+        <div id="btn" class="w-100">
+          <button class="search button is-small is-sucess is-rounded" id="search">Search</button>
+        </div>
       </div>
     </div>
   </section>
@@ -53,7 +60,7 @@
       <div class="columns">
 
         <!-- RECIPE IMAGE/TITLE CARD -->
-        <div class="card column is-one-quarter">
+        <div class="card column is-one-quarter mr-2">
           <div class="card-image" id="recipe-image">
             <figure class="image is-128x128" id="recipe-figure">
               <img class="is-rounded" src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
@@ -97,49 +104,38 @@
 
   <!-- BOTTOM BLOCK, EMBEDDED YOUTUBE RECIPES -->
   <!-- CURRENTLY FIRST 4 VIDEOS (NON SPONSORED) FOR "CELERY INGREDIENT RECIPE" -->
-  <section class="youtube-block section columns">
+  <section class="youtube-block section">
 
-    <card class="video-embed column-is-quarter" id="video-embed-zero">
+    <card class="video-embed" id="video-embed-zero">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 1</h3>
       </header>
-      <iframe id="video-zero" src="https://www.youtube.com/embed/YaFsjMwrquI?si=n0iooPadd2a5pW9U"
-        title="YouTube video player" frameborder="0"></iframe>
-      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe> -->
+      <iframe id="video-zero" src="https://www.youtube.com/embed/YaFsjMwrquI"></iframe>
     </card>
 
     <card class="video-embed" id="video-embed-one">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 2</h3>
       </header>
-      <iframe id="video-one" src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p"
-        title="YouTube video player" frameborder="0"></iframe>
-      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe> -->
+      <iframe id="video-one" src="https://www.youtube.com/embed/lb34jgJUPhw"></iframe>
     </card>
 
     <card class="video-embed" id="video-embed-two">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 3</h3>
       </header>
-      <iframe id="video-two" src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra"
-        title="YouTube video player" frameborder="0"></iframe>
-      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe> -->
+      <iframe id="video-two" src="https://www.youtube.com/embed/lxfRasdj7nE"></iframe>
+
     </card>
 
     <card class="video-embed" id="video-embed-three">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 4</h3>
       </header>
-      <iframe id="video-three" src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y"
-        title="YouTube video player" frameborder="0"></iframe>
-      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe> -->
-    </card>
+      <iframe id="video-three" src="https://www.youtube.com/embed/LaTqfEOLISk"></iframe>
 
+    </card>
+    <!-- <p class="youtube-intro">Find more recipes on Youtube related to your ingredient!</p> -->
   </section>
 
   <!-- OUR JS -->
