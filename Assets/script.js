@@ -16,6 +16,7 @@ let dataMeals = [];
 // Function to input the ingredient into MealDB and return Recipe cards
 
 function getMainIngredient() {
+    displaySearchHistory();
     // get user input
     let userInput = inputEl.value.trim();
     // If user input is empty -> alert
@@ -276,8 +277,6 @@ function displaySearchHistory() {
     }
 }
 
-// Display search history upon page load
-window.addEventListener('load', displaySearchHistory);
 // EventListener for the search buttton
 searchButton.addEventListener('click', getMainIngredient);
 //EventListener for youtube data
