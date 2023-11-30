@@ -207,8 +207,8 @@ fetch(requestUrl)
                 navigate(1);
             });
         });
-};
-
+});
+}
 
 
 
