@@ -21,16 +21,14 @@
 
   <!-- TOP BLOCK, INGREDIENT SEARCH -->
   <section class="hero is-medium">
-
     <div class="hero-body" id="hero">
       <h1> Leftover</h1>
-
       <h4>Have any ingredients left over in the fridge?</h4>
       <h4>Enter them to see a recipe to use them in!</h4>
 
       <input id="user-input" class="form-control" placeholder="Search for your leftover ingredient!">
       <div id="btn" class="w-100">
-        <button class="button is-small is-sucess is-rounded" id="search">Search</button>
+        <button class="search button is-small is-sucess is-rounded" id="search">Search</button>
       </div>
     </div>
   </section>
@@ -39,45 +37,40 @@
   <div class="middle-block section columns">
 
     <!-- RECENT RECIPE SEARCHES -->
-    <section class="recent-searches column is-half">
+    <section class="box box-radius radius-large recent-searches column is-one-quarter">
       <card>
-        <h2>Recent Recipes</h2>
+        <h2 class="recipe-title">Recent Recipes</h2>
         <ul id="historyBar">
-          <!-- <li><button type="button" class="btn btn-pr w-100 my-1">Button 1</button></li>
-          <li><button type="button" class="btn btn-pr w-100 my-1">Button 2</button></li>
-          <li><button type="button" class="btn btn-pr w-100 my-1">Button 3</button></li> -->
         </ul>
       </card>
     </section>
 
     <!-- RETURN RECIPE WITH IMAGE -->
-    <section class="recipe-block column is-half carouselbox" aria-role="img" aria-label="carousel">
-      <h2>Recipes</h2>
-      <!-- <card class="recipe-image" id="recipe-image"><img></card>
-      <card class="recipe-display" id="recipe-display"></card> -->
+    <section class="recipe-block column is-three-fifths carouselbox" aria-role="img" aria-label="carousel">
+      <h2 class="recipe-title">Recipes</h2>
 
       <div class="columns">
 
         <!-- RECIPE IMAGE/TITLE CARD -->
-        <div class="card column">
+        <div class="card column is-one-quarter">
           <div class="card-image" id="recipe-image">
-            <figure class="image is-128x128">
+            <figure class="image is-128x128" id="recipe-figure">
               <img class="is-rounded" src="https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg">
             </figure>
           </div>
           <div class="card-content">
             <div class="media-left media-content" id="recipe-title">
-              <p class="title is-2"> Lamb Tzatziki Burgers</p>
+              <h5> Lamb Tzatziki Burgers</h5>
             </div>
           </div>
         </div>
 
         <!-- RECIPE DIRECTIONS -->
-        <div class="card column">
+        <div class="card column is-three-quarters">
           <div class="card-content" id="recipe-display">
             <div class="media-right media-content">
               <h5> Instructions</h5>
-              <ul class="recipe-instructions">
+              <ul class="content recipe-instructions">
                 <li>Tip the bulghar into a pan, cover with water and boil for 10 mins.</li>
                 <li>Drain really well in a sieve, pressing out any excess water.</li>
                 <li>To make the tzatziki, squeeze and discard the juice from the cucumber, then mix into the yogurt with
@@ -92,10 +85,10 @@
             </div>
           </div>
         </div>
-
       </div>
-      <button class="prev">◀ Previous</button>
-      <button class="next">Next ▶ </button>
+      <!-- CYCLE THROUGH RECIPES WITH NEXT/PREVIOUS BUTTONS -->
+      <button class="prev button is-success is-rounded">◀ Previous</button>
+      <button class="next button is-success is-rounded">Next ▶ </button>
     </section>
 
 
@@ -109,41 +102,41 @@
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 1</h3>
       </header>
-      <iframe id="video-zero" width="250" height="141" src="https://www.youtube.com/embed/cM_q2KrWUsA"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      <iframe id="video-zero" src="https://www.youtube.com/embed/YaFsjMwrquI?si=n0iooPadd2a5pW9U"
+        title="YouTube video player" frameborder="0"></iframe>
+      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
-      </iframe>
+      </iframe> -->
     </card>
 
     <card class="video-embed" id="video-embed-one">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 2</h3>
       </header>
-      <iframe id="video-one" width="250" height="141"
-        src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+      <iframe id="video-one" src="https://www.youtube.com/embed/lb34jgJUPhw?si=tdVgwbNZvf9LUE9p"
+        title="YouTube video player" frameborder="0"></iframe>
+      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe> -->
     </card>
 
     <card class="video-embed" id="video-embed-two">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 3</h3>
       </header>
-      <iframe id="video-two" width="250" height="141"
-        src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+      <iframe id="video-two" src="https://www.youtube.com/embed/lxfRasdj7nE?si=M_7tCtUjjL3vi0Ra"
+        title="YouTube video player" frameborder="0"></iframe>
+      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe> -->
     </card>
 
     <card class="video-embed" id="video-embed-three">
       <header class="card-header">
         <h3 class="card-header-title is-center is-capitalized">Video 4</h3>
       </header>
-      <iframe id="video-three" width="250" height="141"
-        src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+      <iframe id="video-three" src="https://www.youtube.com/embed/LaTqfEOLISk?si=4ulWY2q541cAEM3y"
+        title="YouTube video player" frameborder="0"></iframe>
+      <!-- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe> -->
     </card>
 
   </section>

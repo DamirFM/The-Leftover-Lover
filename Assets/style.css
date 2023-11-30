@@ -9,14 +9,10 @@
     --green: forestgreen;
     --cursive: 'Gloria Hallelujah', cursive;
     --sans: 'Recursive', sans-serif;
-   --rounded: 20px;
-   --shadow: var(--khaki) 0px 10px 36px 0px, var(--orange) 0px 0px 0px 1px;
-   --border-radius: var(--rounded);
-   --box-shadow: var(--shadow);
-
-
-   
+    --rounded: 20px;
+    --shadow: var(--khaki) 0px 10px 36px 0px, var(--orange) 0px 0px 0px 1px;
 }
+
 
 /* UNIVERSAL STYLING ELEMENTS */
 * {
@@ -28,7 +24,6 @@ h1 {
     font-weight: bolder;
     font-size: 65px;
     line-height: 0.8;
-    
 }
 
 h2,
@@ -58,52 +53,61 @@ h7 {
 /* TOP BLOCK */
 .hero-body {
     background-color: var(--orange);
-    padding: 2%;
-  
+    padding: 2%;  
 }
 
 .hero-body h4 {
-
     line-height: 30px;
     margin: 0px;
     padding: 0px;
-    border-radius: var(--border)   
-    }
+    border-radius: var(--rounded)   
+}
 
-    #lemon-icon {
-height: 30px
-
+#lemon-icon {
+    height: 30px
     }
 
 #user-input {
     width: 300px;
     height: 40px;
-    border-radius: var(--border-radius);
+    border-radius: var(--rounded);
     margin-top: 20px;
 }
 
 #search {
-margin-top: 10px;
+    margin-top: 10px;
 }
-
-
-
 
 
 /* MIDDLE BLOCK */
 .middle-block {
     background-color: var(--maize);
     padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .recent-searches {
     background-color: var(--sage);
     padding: 2%;
+    /* height: 400px; */
+    /* overflow: scroll; */
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    margin: 10px;
 }
 
 .recipe-block {
     background-color: var(--buff);
     padding: 2%;
+    border-radius: var(--rounded);
+    margin: 10px;
+    box-shadow: var(--shadow);
+
+}
+
+.recipe-title {
+    padding-bottom: 5%;
 }
 
 .recipe-instructions {
@@ -120,7 +124,8 @@ margin-top: 10px;
 /* BOTTOM BLOCK */
 .youtube-block {
     background-color: var(--khaki);
-    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .video-embed {
@@ -129,4 +134,10 @@ margin-top: 10px;
 
 .video-embed .card-header {
     background-color: #ffaf4087;
+}
+
+@media (max-width: 560px) {
+    .middle-block {
+        display: block;
+    }
 }

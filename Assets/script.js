@@ -1,9 +1,9 @@
-// // https://www.themealdb.com/api/json/v1/1/filter.php?i=
+// https://www.themealdb.com/api/json/v1/1/filter.php?i=
 
 let inputEl = document.getElementById('user-input');
 let searchButton = document.getElementById('search');
 let recipeCard = document.getElementById('recipe-display');
-let recipeImage = document.getElementById('recipe-image');
+let recipeImage = document.getElementById('recipe-figure');
 let recipeTitle = document.getElementById('recipe-title');
 let historyList = document.getElementById('historyBar');
 let prevButton = document.querySelector('.prev');
@@ -12,6 +12,8 @@ let nextButton = document.querySelector('.next');
 let currentIndex = 0;
 let dataMeals = [];
 
+
+// Function to input the ingredient into MealDB and return Recipe cards
 
 function getMainIngredient() {
     // get user input
@@ -29,8 +31,9 @@ function getMainIngredient() {
         btnEl.setAttribute("class", "delete")
         notification.appendChild(btnEl);
         hero.appendChild(notification);
-        btnEl.addEventListener('click',function() {
-        notification.remove();
+
+        btnEl.addEventListener('click', function () {
+            notification.remove();
         });
         return;
     }
@@ -49,7 +52,6 @@ function getMainIngredient() {
             // Do JSON.parse  and assigns it back to the history variable.
             history = JSON.parse(history);
 
-
             // then push ingredient value to history array
             history.push(ingredient);
             // updates the history variable.
@@ -66,8 +68,9 @@ function getMainIngredient() {
         }
     }
 
-    // URL request to the themealdb.com
 
+
+    // URL request to the themealdb.com for Recipe Generation
     let requestUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
     console.log(requestUrl)
     // Do fetch to requestUrl
@@ -90,13 +93,17 @@ function getMainIngredient() {
                 btnEl.setAttribute("class", "delete")
                 notification.appendChild(btnEl);
                 hero.appendChild(notification);
-                btnEl.addEventListener('click',function() {
-                notification.remove();
+
+                btnEl.addEventListener('click', function () {
+                    notification.remove();
+
                 });
                 // Replace with the basic dialog window jQuery ui
                 console.log('Sorry,wrong ingredient name!');
                 return;
-            } else if (dataMeals.length === 0  ) {
+
+            } else if (dataMeals.length === 0) {
+
                 console.log('You need to fill out the ingredient name!');
             }
 
@@ -108,31 +115,28 @@ function getMainIngredient() {
                 // the dataMeals array and assign it to the currentMeal variable.
                 let currentMeal = dataMeals[index];
 
-                recipeTitle.innerHTML = '';
-                // Crating h5 element fot Recipe title
-                let cardTitle = document.createElement('h5');
-                // Assigning data from object
-                cardTitle.textContent = currentMeal.strMeal;
-                // Added the class name
-                cardTitle.classList = 'card-title';
-                // Append it to the [arent element]
-                recipeTitle.appendChild(cardTitle);
-                // Same as h5
-                recipeCard.innerHTML = '';
-                let cardParagraph = document.createElement("p");
-                cardParagraph.textContent = currentMeal.strInstructions;
-                recipeCard.appendChild(cardParagraph);
-
+                // Generate Recipe Card Image
                 recipeImage.innerHTML = '';
                 let cardImg = document.createElement("img");
-                // cardImg.classList("is-rounded");
+                cardImg.classList = "is-rounded";
                 cardImg.src = currentMeal.strMealThumb;
                 recipeImage.appendChild(cardImg);
 
+                // Generate Recipe Card Title
+                recipeTitle.innerHTML = '';
+                let cardTitle = document.createElement("h5");
+                cardTitle.textContent = currentMeal.strMeal;
+                recipeTitle.appendChild(cardTitle);
+
+                // Generate Recipe Card Instructions
+                recipeCard.innerHTML = '';
+                let cardParagraph = document.createElement("ul");
+                cardParagraph.textContent = currentMeal.strInstructions;
+                cardParagraph.classList = 'content recipe-instructions';
+                recipeCard.appendChild(cardParagraph);
             }
 
-            // URL request to the themealdb.com
-
+            // URL request to the themealdb.com for Cycling through recipes
             let requestUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
             console.log(requestUrl)
             // Do fetch to requestUrl
@@ -151,6 +155,7 @@ function getMainIngredient() {
                         alert('No recipes found!');
                         return;
                     }
+
                     // Navigation function throughout the dataMeals array
                     function navigate(direction) {
                         currentIndex = currentIndex + direction;
@@ -164,6 +169,7 @@ function getMainIngredient() {
                         // Shows currentIndex
                         displayRecipe(currentIndex);
                     }
+
                     // Display the first recipe fetched
                     displayRecipe(currentIndex);
                     // EventListener for prevButton
@@ -177,16 +183,16 @@ function getMainIngredient() {
                 });
         });
 
-});
 }
 
-
+// Function to search Youtube for the ingredient and return 4 videos
 function getYoutubeData() {
     let youtubeApiKey = 'AIzaSyD6Duo2s9r4Tj57LH9OVooXotyYLkHzChI';
+    let mcyoutubeApiKey = 'AIzaSyAOyV1zNyuCA9Jp91CeZtyRmQSmhKZEAts';
     let userInput = "recipe" + "ingredient" + inputEl.value.trim();
 
     // URL request to the youtube api + keyword recipe + ingriedient
-    let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + youtubeApiKey;
+    let youtubeRequestUrl = "https://www.googleapis.com/youtube/v3/search?q=" + userInput + "&key=" + mcyoutubeApiKey;
     console.log(youtubeRequestUrl)
     // Do fetch to requestUrl
     fetch(youtubeRequestUrl)
@@ -254,7 +260,9 @@ function displaySearchHistory() {
             // Assign ingredient value to the button element
             btnEl.textContent = ingredient;
             // Assign the class to the button element
-            btnEl.classList = 'btn btn-pr w-100 my-1';
+
+            btnEl.classList = 'button is-light is-normal is-success is-rounded my-1';
+
             // Let's add EventListener to every each new button element
             btnEl.addEventListener('click', function () {
                 inputEl.value = ingredient; // Set input value to the clicked ingredient
@@ -267,11 +275,10 @@ function displaySearchHistory() {
         });
     }
 }
+
 // Display search history upon page load
 window.addEventListener('load', displaySearchHistory);
 // EventListener for the search buttton
 searchButton.addEventListener('click', getMainIngredient);
-
 //EventListener for youtube data
 searchButton.addEventListener('click', getYoutubeData);
-
