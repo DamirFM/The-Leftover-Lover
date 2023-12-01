@@ -15,9 +15,10 @@ You will also see some popular Youtube videos that include this ingredient in a 
 
 And a list of your recent ingredient searches will be saved in case you would like to return to them.
 
-![Alt text](./Images/?.png "Welcome page")
+![Alt text](./Assets/images/Opening%20Page.gif "Opening Page")
+![Alt text](./Assets/images/Search%20Result.gif "Search Result")
+![Alt text](./Assets/images/Recent%20Search.gif "Recent Search")
 
-![Alt text](./Images/?2.png "App in Use")
 
 ## Credits
 ### API's Used:
@@ -43,3 +44,8 @@ https://bulma.io/
 
 ## License
 MIT License
+
+### Authors
+DamirFM: https://github.com/DamirFM <br>
+jasskoch: https://github.com/jassakoch <br>
+morgs999: https://github.com/morgs999 <br>
