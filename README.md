@@ -4,7 +4,7 @@
 The Leftover Lover web application allows you to input an ingredient you have sitting unused in your fridge, and find a delicious recipe to make for dinner!
 
 ## Deployed Application
-LINK
+[Leftover Lover Web Application](https://damirfm.github.io/leftover/)
 
 ## Usage
 At the top of the page, simply search for the ingredient you'd like to use up, whether it's celery, chicken, eggs, etc.
