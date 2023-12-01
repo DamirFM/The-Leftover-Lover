@@ -272,6 +272,7 @@ function displaySearchHistory() {
             btnEl.addEventListener('click', function () {
                 inputEl.value = ingredient; // Set input value to the clicked ingredient
                 getMainIngredient(); // Call getApi function for the clicked ingredient
+                getYoutubeData();
             });
             // Append button element to the li element
             liEl.appendChild(btnEl);
