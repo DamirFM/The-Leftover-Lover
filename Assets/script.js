@@ -212,6 +212,7 @@ function getYoutubeData() {
             let videoZeroDefault = document.getElementById('video-zero')
             videoZeroDefault.remove();
             let videoZero = document.createElement("iframe");
+            videoZero.setAttribute("id", "video-zero");
             videoZero.setAttribute("src", "https://www.youtube.com/embed/" + data.items[0].id.videoId)
             videoSpotZero.appendChild(videoZero);
 
@@ -220,6 +221,7 @@ function getYoutubeData() {
             let videoOneDefault = document.getElementById('video-one')
             videoOneDefault.remove();
             let videoOne = document.createElement("iframe");
+            videoOne.setAttribute("id", "video-one");
             videoOne.setAttribute("src", "https://www.youtube.com/embed/" + data.items[1].id.videoId)
             videoSpotOne.appendChild(videoOne);
 
@@ -228,6 +230,7 @@ function getYoutubeData() {
             let videoTwoDefault = document.getElementById('video-two')
             videoTwoDefault.remove();
             let videoTwo = document.createElement("iframe");
+            videoTwo.setAttribute("id", "video-two");
             videoTwo.setAttribute("src", "https://www.youtube.com/embed/" + data.items[2].id.videoId)
             videoSpotTwo.appendChild(videoTwo);
 
@@ -236,6 +239,7 @@ function getYoutubeData() {
             let videoThreeDefault = document.getElementById('video-three')
             videoThreeDefault.remove();
             let videoThree = document.createElement("iframe");
+            videoThree.setAttribute("id", "video-three");
             videoThree.setAttribute("src", "https://www.youtube.com/embed/" + data.items[3].id.videoId)
             videoSpotThree.appendChild(videoThree);
         });
