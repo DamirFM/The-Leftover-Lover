@@ -19,6 +19,9 @@ function getMainIngredient() {
     displaySearchHistory();
     // get user input
     let userInput = inputEl.value.trim();
+    // 
+document.getElementById("content").innerHTML = userInput;
+
     // If user input is empty -> alert
     if (!userInput) {
         // Replace with the basic dialog window jQuery ui
