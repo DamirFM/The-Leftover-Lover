@@ -19,7 +19,7 @@ function getMainIngredient() {
     displaySearchHistory();
     // get user input
     let userInput = inputEl.value.trim();
-    let escapedInput = escapeHTML(userInput);
+    let escapedInput = createTextNode(userInput);
     document.getElementById("content").innerHTML = escapedInput;
     
 
