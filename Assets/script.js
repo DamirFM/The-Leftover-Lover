@@ -16,6 +16,7 @@ let dataMeals = [];
 // Function to input the ingredient into MealDB and return Recipe cards
 
 function getMainIngredient() {
+    
     displaySearchHistory();
     // get user input
     let userInput = inputEl.value.trim();
