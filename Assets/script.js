@@ -19,8 +19,9 @@ function getMainIngredient() {
     displaySearchHistory();
     // get user input
     let userInput = inputEl.value.trim();
-    // 
-document.getElementById("content").innerHTML = userInput;
+    let escapedInput = escapeHTML(userInput);
+    document.getElementById("content").innerHTML = escapedInput;
+    
 
     // If user input is empty -> alert
     if (!userInput) {
