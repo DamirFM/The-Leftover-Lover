@@ -1,12 +1,12 @@
 # Leftover Lover Recipe Finder! 🥬  🍎  🥚  🥩
 
-## Description
+### Description
 The Leftover Lover web application allows you to input an ingredient you have sitting unused in your fridge, and find a delicious recipe to make for dinner!
 
-## Deployed Application
+### Deployed Application
 [Leftover Lover Web Application](https://damirfm.github.io/leftover/)
 
-## Usage
+### Usage
 At the top of the page, simply search for the ingredient you'd like to use up, whether it's celery, chicken, eggs, etc.
 
 The Leftover Lover will return a ?list of? recipes to choose from including the ingredient, including an image for reference, and a list of instructions on how to make it.
@@ -20,7 +20,7 @@ And a list of your recent ingredient searches will be saved in case you would li
 ![Alt text](./Assets/images/Recent%20Search.gif "Recent Search")
 
 
-## Credits
+### Credits
 ### API's Used:
 #### theMealDB: 
  - https://www.themealdb.com/api.php
